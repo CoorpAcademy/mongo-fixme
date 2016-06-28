@@ -193,6 +193,10 @@ Installation
 
 Changelog
 ---------
+
+###1.0.1
+- fix tag
+
 ###1.0.0
 - breaking change doesn't support node 0.10 & 0.12
 - support node 5 and node 6

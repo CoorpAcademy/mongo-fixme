@@ -2,7 +2,7 @@
   "author": "Loïc Calvy <lc@coorpacademy.com>",
   "name": "mongo-fixme",
   "description": "Easy JSON fixture loading for MongoDB.  Makes managing document relationships easier. This is a forked version of pow-mongodb-fixtures",
-  "version": "0.10.1",
+  "version": "1.0.0",
   "keywords": [
     "mongodb",
     "mongo",

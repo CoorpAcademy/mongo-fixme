@@ -193,6 +193,14 @@ Installation
 
 Changelog
 ---------
+###1.0.0
+- breaking change doesn't support node 0.10 & 0.12
+- support node 5 and node 6
+- async: 2.0.0-rc.6
+- bson: 0.4.23
+- lodash: 4.13.1
+- mongodb: 2.1.18
+
 ###0.10.1
 - Update mongodb driver to 1.4.31
 - fix mongo db minor version

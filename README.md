@@ -193,6 +193,8 @@ Installation
 
 Changelog
 ---------
+###1.0.2
+- fix npm deploy key
 
 ###1.0.1
 - fix tag

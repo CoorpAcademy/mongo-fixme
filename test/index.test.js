@@ -189,7 +189,7 @@ exports['load'] = {
 					loadCollection('southpark', function(err, docs) {
 						if (err) return next(err);
 						
-						var names = _.pluck(docs, 'name');
+						var names = _.map(docs, 'name');
 						
 						test.same(names.sort(), ['Eric', 'Butters', 'Kenny'].sort());
 						
@@ -200,7 +200,7 @@ exports['load'] = {
 					loadCollection('boredToDeath', function(err, docs) {
 						if (err) return next(err);
 						
-						var names = _.pluck(docs, 'name');
+						var names = _.map(docs, 'name');
 						
 						test.same(names.sort(), ['Jonathan', 'Ray', 'George'].sort());
 
@@ -235,7 +235,7 @@ exports['load'] = {
 					loadCollection('southpark', function(err, docs) {
 						if (err) return next(err);
 						
-						var names = _.pluck(docs, 'name');
+						var names = _.map(docs, 'name');
 						
 						test.same(names.sort(), ['Eric', 'Butters', 'Kenny'].sort());
 						
@@ -246,7 +246,7 @@ exports['load'] = {
 					loadCollection('boredToDeath', function(err, docs) {
 						if (err) return next(err);
 						
-						var names = _.pluck(docs, 'name');
+						var names = _.map(docs, 'name');
 						
 						test.same(names.sort(), ['Jonathan', 'Ray', 'George'].sort());
 
@@ -264,7 +264,7 @@ exports['load'] = {
 			loadCollection('archer', function(err, docs) {
 				if (err) return next(err);
 				
-				var names = _.pluck(docs, 'name');
+				var names = _.map(docs, 'name');
 				
 				test.same(names.sort(), ['Sterling', 'Lana', 'Cheryl'].sort());
 				
@@ -283,7 +283,7 @@ exports['load'] = {
     					loadCollection('archer', function(err, docs) {
     						if (err) return next(err);
 
-    						var names = _.pluck(docs, 'name');
+    						var names = _.map(docs, 'name');
 
     						test.same(names.sort(), ['Sterling', 'Lana', 'Cheryl'].sort());
 
@@ -294,7 +294,7 @@ exports['load'] = {
     					loadCollection('southpark', function(err, docs) {
     						if (err) return next(err);
 
-    						var names = _.pluck(docs, 'name');
+    						var names = _.map(docs, 'name');
 
     						var expected = ['Eric', 'Butters', 'Kenny', 'Stan', 'Towelie'];
 
@@ -315,7 +315,7 @@ exports['load'] = {
               loadCollection('archer', function(err, docs) {
                 if (err) return next(err);
 
-                var names = _.pluck(docs, 'name');
+                var names = _.map(docs, 'name');
 
                 test.same(names.sort(), ['Sterling', 'Lana', 'Cheryl'].sort());
 
@@ -348,11 +348,11 @@ exports['load'] = {
   			loadCollection('archer', function(err, docs) {
   				if (err) return test.done(err);
 
-  				var x = _.pluck(docs, 'x');
+  				var x = _.map(docs, 'x');
 
           test.same(x.sort(), ['SterlingX', 'LanaX', 'CherylX'].sort());
 
-          var y = _.pluck(docs, 'name');
+          var y = _.map(docs, 'name');
 
           test.same(y.sort(), ['SterlingY', 'LanaY', 'CherylY'].sort());
 
@@ -380,7 +380,7 @@ exports['clear'] = {
             function(cb) {
                 loadCollection('archer', function(err, docs) {
                     if (err) return cb(err);
-
+                    console.log('archer', docs.length);
                     test.same(0, docs.length);
 
                     cb();
@@ -390,7 +390,8 @@ exports['clear'] = {
             function(cb) {
                 loadCollection('southpark', function(err, docs) {
                     if (err) return cb(err);
-
+                    console.log('southpark', docs.length);
+                    
                     test.same(0, docs.length);
 
                     cb();
@@ -571,7 +572,7 @@ exports['clearAndLoad'] = {
                 loadCollection('southpark', function(err, docs) {
                     if (err) return cb(err);
                     
-                    var names = _.pluck(docs, 'name');
+                    var names = _.map(docs, 'name');
                     
                     test.same(names, ['Stan', 'Towelie']);
 
@@ -586,9 +587,11 @@ exports['clearAndLoad'] = {
 
 //Close DB connection and end process when done
 exports['exit'] = function(test) {
-	db.close();
+  db.close(function(err) {
+    test.done();
+    setTimeout(function() {
+      process.exit(0)
+    },1000)
+  });
 	
-	test.done();
-	console.log('test done');
-	process.nextTick(process.exit);
 }

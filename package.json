@@ -3,10 +3,15 @@
   "name": "mongo-fixme",
   "description": "Easy JSON fixture loading for MongoDB.  Makes managing document relationships easier. This is a forked version of pow-mongodb-fixtures",
   "version": "0.10.1",
-  "keywords": ["mongodb", "mongo", "json", "fixtures"],
+  "keywords": [
+    "mongodb",
+    "mongo",
+    "json",
+    "fixtures"
+  ],
   "repository": {
-      "type" : "git", 
-      "url" : "http://github.com/CoorpAcademy/mongo-fixme.git"
+    "type": "git",
+    "url": "http://github.com/CoorpAcademy/mongo-fixme.git"
   },
   "bin": {
     "mongofixtures": "./bin/mongofixtures"
@@ -16,17 +21,16 @@
     "npm": "2.1.x"
   },
   "dependencies": {
-		"async": "0.1.15",
-		"mongodb": "~1.4.31",
-		"lodash": "~3.2.0",
-		"bson": ">=0.0.4",
-    "optimist": "0.3.5"
+    "async": "^2.0.0-rc.6",
+    "bson": "^0.4.23",
+    "lodash": "^4.13.1",
+    "mongodb": "^2.1.18"
   },
-	"devDependencies": {
-		"nodeunit": "0.6.4"
-	},
-	"main": "src/index",
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "main": "src/index",
   "scripts": {
-    "test": "./node_modules/nodeunit/bin/nodeunit test/index.test.js"
+    "test": "nodeunit test/index.test.js"
   }
 }

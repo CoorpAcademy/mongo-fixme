@@ -3,7 +3,7 @@ mongodb-fixtures
 
 [![Build Status](https://travis-ci.org/CoorpAcademy/mongo-fixme.svg?branch=master)](https://travis-ci.org/CoorpAcademy/mongo-fixme)
 
-This is a forked version of mongo-fixme
+This is a forked version of pow-mongodb-fixtures
 
 Simple fixture loader for MongoDB on NodeJS.  Makes managing relationships between documents easier.
 
@@ -193,7 +193,7 @@ Installation
 
 Changelog
 ---------
-###0.10.0
+###0.10.1
 - Update mongodb driver to 1.4.31
 - fix mongo db minor version
 - replace underscore to lodash

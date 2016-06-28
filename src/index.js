@@ -147,7 +147,7 @@ Loader.prototype.clear = function(collectionNames, cb) {
     function getCollectionNames(cb) {
       //If collectionNames not passed we clear all of them
       if (!collectionNames) {
-        results.db.collectionNames(function(err, names) {
+        results.db.listCollections().toArray(function(err, names) {
           if (err) return cb(err);
 
           //Get the real collection names

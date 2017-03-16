@@ -1,6 +1,8 @@
 mongodb-fixtures
 =================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/CoorpAcademy/mongo-fixme.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/CoorpAcademy/mongo-fixme.svg?branch=master)](https://travis-ci.org/CoorpAcademy/mongo-fixme)
 
 This is a forked version of pow-mongodb-fixtures

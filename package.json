@@ -21,13 +21,13 @@
     "npm": "2.1.x"
   },
   "dependencies": {
-    "async": "^2.0.0-rc.6",
+    "async": "^2.5.0",
     "bson": "^0.4.23",
-    "lodash": "^4.13.1",
-    "mongodb": "^2.1.18"
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.31"
   },
   "devDependencies": {
-    "nodeunit": "^0.9.1"
+    "nodeunit": "^0.9.5"
   },
   "main": "src/index",
   "scripts": {
